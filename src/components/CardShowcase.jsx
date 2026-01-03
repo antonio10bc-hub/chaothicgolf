@@ -1,28 +1,18 @@
 import { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 
-const cards = [
-	{
-		id: 1,
-		name: 'El Driver Maldito',
-		description: 'Un palo que desafía las leyes de la física',
-		bgColor: 'bg-white',
-	},
-	{
-		id: 2,
-		name: 'Hoyo Negro',
-		description: 'Absorbe todo lo que se acerca demasiado',
-		bgColor: 'bg-neogreen',
-	},
-	{
-		id: 3,
-		name: 'Viento del Caos',
-		description: 'Cambia la dirección del juego en un instante',
-		bgColor: 'bg-white',
-	},
+const cardRows = [
+	[7, 8, 9, 10, 11, 12], // Fila 1
+	[27, 28, 29, 16],      // Fila 2
+	[17, 18, 19, 20],      // Fila 3
+	[13, 14, 15],          // Fila 4
+	[21, 22, 23, 24, 25, 30],// Fila 5
+	[1, 2, 3, 4, 5, 6]       // Fila 6
 ];
 
 export default function CardShowcase() {
+	let cardIndex = 0;
+
 	return (
 		<section className="py-24 px-4 min-h-screen flex flex-col items-center justify-center">
 			<motion.h2
@@ -44,16 +34,26 @@ export default function CardShowcase() {
 				Descubre las cartas que cambiarán tu estrategia
 			</motion.p>
 
-			<div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto w-full">
-				{cards.map((card, index) => (
-					<Card key={card.id} card={card} index={index} />
+			<div className="w-full max-w-6xl mx-auto">
+				{cardRows.map((row, rowIndex) => (
+					<div
+						key={rowIndex}
+						className="flex justify-center flex-wrap gap-4 mb-4"
+					>
+						{row.map((cardId) => {
+							const index = cardIndex++;
+							return (
+								<Card key={cardId} cardId={cardId} index={index} />
+							);
+						})}
+					</div>
 				))}
 			</div>
 		</section>
 	);
 }
 
-function Card({ card, index }) {
+function Card({ cardId, index }) {
 	const [rotateX, setRotateX] = useState(0);
 	const [rotateY, setRotateY] = useState(0);
 	const [isHovered, setIsHovered] = useState(false);
@@ -92,7 +92,7 @@ function Card({ card, index }) {
 			initial={{ opacity: 0, y: 50 }}
 			whileInView={{ opacity: 1, y: 0 }}
 			viewport={{ once: true }}
-			transition={{ duration: 0.6, delay: index * 0.1 }}
+			transition={{ duration: 0.6, delay: index * 0.05 }}
 			className="relative"
 		>
 			{/* Sombra dura naranja detrás de la carta al hover */}
@@ -110,7 +110,7 @@ function Card({ card, index }) {
 				onMouseMove={handleMouseMove}
 				onMouseLeave={handleMouseLeave}
 				onMouseEnter={handleMouseEnter}
-				className="relative cursor-pointer"
+				className="relative cursor-pointer w-40 h-56"
 				style={{
 					transform: `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`,
 					transformStyle: 'preserve-3d',
@@ -118,19 +118,13 @@ function Card({ card, index }) {
 				}}
 			>
 				{/* Carta */}
-				<div className={`relative ${card.bgColor} border-2 border-neodark p-6 h-[500px] flex flex-col`}>
-					{/* Placeholder de imagen */}
-					<div className="w-full h-64 border-2 border-neodark mb-4 bg-neodark flex items-center justify-center">
-						<div className="text-neobase text-6xl font-bold">
-							{card.name.charAt(0)}
-						</div>
-					</div>
-
-					{/* Contenido de la carta */}
-					<div className="flex-1 flex flex-col">
-						<h3 className="text-2xl font-bold text-neodark mb-2">{card.name}</h3>
-						<p className="text-neodark text-sm leading-relaxed">{card.description}</p>
-					</div>
+				<div className="relative bg-white border-2 border-neodark w-full h-full overflow-hidden">
+					{/* Imagen real */}
+					<img
+						src={`/images/${cardId}.png`}
+						alt={`Carta ${cardId}`}
+						className="object-cover w-full h-full"
+					/>
 				</div>
 			</div>
 		</motion.div>
