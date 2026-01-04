@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import RulesList from '../components/RulesList.jsx';
+import Footer from '../components/Footer.jsx'; // <--- IMPORTAMOS FOOTER
 ---
 
 <Layout title="Reglas - Chaothic Golf">
@@ -90,4 +91,7 @@ import RulesList from '../components/RulesList.jsx';
             <RulesList client:visible />
         </div>
     </div>
+    
+    <Footer client:load />
+
 </Layout>
