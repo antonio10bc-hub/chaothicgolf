@@ -24,7 +24,7 @@ export default function Hero() {
 				initial={{ opacity: 0, y: 30 }}
 				animate={{ opacity: 1, y: 0 }}
 				transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-				className="text-xl text-neodark mb-8 max-w-2xl mx-auto"
+				className="text-sm text-neodark mb-8 max-w-2xl mx-auto"
 			>
 				Un juego de mesa donde el caos y la estrategia se encuentran en cada golpe
 			</motion.p>

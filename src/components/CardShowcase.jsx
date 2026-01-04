@@ -96,7 +96,7 @@ function Card({ cardId, index }) {
 			particleCount: 100,
 			spread: 70,
 			origin: { x, y },
-			colors: ['#F8991D', '#2D2E2D', '#F9F8F4'],
+			colors: ['#08dc07', '#f84426', '#4656f9', '#ebf935', '#fa61e7', '#35f9cf'],
 		});
 	};
 
