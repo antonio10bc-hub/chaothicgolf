@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
+import confetti from 'canvas-confetti';
 
 const cardRows = [
 	[7, 8, 9, 10, 11, 12], // Fila 1
@@ -87,6 +88,18 @@ function Card({ cardId, index }) {
 		setIsHovered(true);
 	};
 
+	const handleClick = (e) => {
+		const x = e.clientX / window.innerWidth;
+		const y = e.clientY / window.innerHeight;
+		
+		confetti({
+			particleCount: 100,
+			spread: 70,
+			origin: { x, y },
+			colors: ['#F8991D', '#2D2E2D', '#F9F8F4'],
+		});
+	};
+
 	return (
 		<motion.div
 			initial={{ opacity: 0, y: 50 }}
@@ -94,6 +107,7 @@ function Card({ cardId, index }) {
 			viewport={{ once: true }}
 			transition={{ duration: 0.6, delay: index * 0.05 }}
 			className="relative"
+			onClick={handleClick}
 		>
 			{/* Sombra dura naranja detrás de la carta al hover */}
 			<div

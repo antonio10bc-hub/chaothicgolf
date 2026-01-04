@@ -1,0 +1,93 @@
+---
+import Layout from '../layouts/Layout.astro';
+import RulesList from '../components/RulesList.jsx';
+---
+
+<Layout title="Reglas - Chaothic Golf">
+    <div class="min-h-screen bg-neobase font-sans">
+        <div class="max-w-6xl mx-auto px-6 py-12">
+            <a
+                href="/"
+                class="bg-white border-2 border-neodark px-4 py-2 font-bold shadow-neo hover:translate-y-[2px] hover:shadow-none transition-all mb-8 inline-block"
+            >
+                ← Volver al Inicio
+            </a>
+
+            <section class="bg-white border-2 border-neodark p-8 mb-12 shadow-neo relative">
+                <h2 class="absolute -top-5 left-6 bg-neodark text-white px-4 py-2 text-xl font-black uppercase -rotate-1 border-2 border-white">
+                    PREPARACIÓN
+                </h2>
+                <div class="pt-4">
+                    <p class="text-lg leading-relaxed text-gray-800 mb-4">
+                        Baraja el mazo de cartas y reparte 3 cartas a cada jugador.
+                    </p>
+                    <p class="text-lg leading-relaxed text-gray-800">
+                        Coloca el mazo boca abajo sobre la mesa al alcance de todos los jugadores. Junto a él, boca arriba, se formará la pila de descartes. Cuando el mazo se haya agotado, sencillamente voltea la pila de descartes. No es necesario barajarla de nuevo.
+                    </p>
+                </div>
+            </section>
+
+            <section class="bg-white border-2 border-neodark p-8 mb-12 shadow-neo relative">
+                <h2 class="absolute -top-5 left-6 bg-neodark text-white px-4 py-2 text-xl font-black uppercase -rotate-1 border-2 border-white">
+                    OBJETIVO DEL JUEGO
+                </h2>
+                <div class="pt-4">
+                    <p class="text-lg leading-relaxed text-gray-800">
+                        Sé el primero en meter tu pelota en el hoyo... o el hoyo en tu pelota.
+                    </p>
+                </div>
+            </section>
+
+            <section class="bg-white border-2 border-neodark p-8 mb-12 shadow-neo relative">
+                <h2 class="absolute -top-5 left-6 bg-neodark text-white px-4 py-2 text-xl font-black uppercase -rotate-1 border-2 border-white">
+                    MECÁNICA DEL JUEGO
+                </h2>
+                <div class="pt-4 space-y-4">
+                    <p class="text-lg leading-relaxed text-gray-800">
+                        Cada jugador puede jugar hasta 2 cartas negras en su turno; las cartas se juegan una a una, no a la vez, ya que otros jugadores podrán responder a cada carta jugada.
+                    </p>
+                    <p class="text-lg leading-relaxed text-gray-800">
+                        Las cartas naranjas se pueden jugar en cualquier momento, tanto en tu turno (independientemente de cuántas cartas negras se hayan jugado) como en el turno de otros jugadores. Además, el efecto de las cartas naranjas se puede usar tanto en tus propias cartas como en las de tus contrincantes.
+                    </p>
+                    <p class="text-lg leading-relaxed text-gray-800">
+                        Independientemente de cuándo se usen las cartas naranjas, se roba solo al final del turno hasta tener 3 cartas en la mano.
+                    </p>
+                    <p class="text-lg leading-relaxed text-gray-800">
+                        Elabora tu estrategia, intenta llegar rápido al hoyo o perjudica a los demás jugadores, ten cuidado con los portales ya que el tablero de juego puede cambiar por completo en un momento!
+                    </p>
+                </div>
+            </section>
+
+            <section class="bg-white border-2 border-neodark p-8 mb-12 shadow-neo relative">
+                <h2 class="absolute -top-5 left-6 bg-neodark text-white px-4 py-2 text-xl font-black uppercase -rotate-1 border-2 border-white">
+                    FASES DEL JUEGO
+                </h2>
+                <div class="pt-4">
+                    <ul class="list-none space-y-0">
+                        <li class="border-b border-gray-300 py-3">
+                            <span class="text-neoaccent font-black text-xl">Fase 1:</span> Puedes descartar tantas cartas como quieras o jugar hasta 2 cartas negras, de una en una.
+                        </li>
+                        <li class="border-b border-gray-300 py-3">
+                            Si tienes y quieres, juega una carta naranja en cualquier momento.
+                        </li>
+                        <li class="border-b border-gray-300 py-3">
+                            <span class="text-neoaccent font-black text-xl">Fase 2:</span> Roba cartas hasta tener 3.
+                        </li>
+                        <li class="border-b border-gray-300 py-3">
+                            <span class="text-neoaccent font-black text-xl">Fase 3:</span> Pasa el turno al siguiente jugador.
+                        </li>
+                        <li class="border-b border-gray-300 py-3">
+                            <span class="text-neoaccent font-black text-xl">Fase 4:</span> En los turnos de los demás, presta atención por si puedes usar una carta naranja para desbaratar las estrategias de tus oponentes.
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <h2 class="inline-block bg-neodark text-white px-4 py-2 text-xl font-black uppercase mb-6 -rotate-1 border-2 border-white">
+                TIPOS DE CARTA
+            </h2>
+
+            <RulesList client:visible />
+        </div>
+    </div>
+</Layout>

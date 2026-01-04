@@ -34,9 +34,12 @@ export default function Hero() {
 				animate={{ opacity: 1, y: 0 }}
 				transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
 			>
-				<button className="px-8 py-3 bg-neoaccent border-2 border-neodark font-bold transition-all hover:shadow-neo hover:-translate-y-1">
+				<a
+					href="/reglas"
+					className="inline-block px-8 py-3 bg-neoaccent border-2 border-neodark font-bold transition-all hover:shadow-neo hover:-translate-y-1"
+				>
 					Descubrir Reglas
-				</button>
+				</a>
 			</motion.div>
 		</section>
 	);

@@ -2,11 +2,11 @@
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.jsx';
 import CardShowcase from '../components/CardShowcase.jsx';
-import Rules from '../components/Rules.jsx';
+import Footer from '../components/Footer.jsx';
 ---
 
 <Layout title="Chaothic Golf - Un juego de mesa misterioso">
 	<Hero client:load />
 	<CardShowcase client:visible />
-	<Rules client:visible />
+	<Footer client:load />
 </Layout>

@@ -18,24 +18,14 @@ const { title = "Chaothic Golf", description = "Un juego de mesa donde el caos y
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		
-		<!-- Google Fonts -->
+		<!-- Google Fonts - Inter -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
 		
 		<title>{title}</title>
 	</head>
-	<body class="bg-neobase text-neodark">
+	<body class="bg-neobase text-neodark min-h-screen">
 		<slot />
 	</body>
 </html>
-
-<style is:global>
-	:root {
-		font-family: 'Outfit', sans-serif;
-	}
-
-	h1, h2, h3, h4, h5, h6 {
-		font-family: 'Clash Display', serif;
-	}
-</style>
