@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import ParticlesBackground from '../components/ParticlesBackground.jsx';
 
 interface Props {
 	title?: string;
@@ -26,6 +27,9 @@ const { title = "Chaothic Golf", description = "Un juego de mesa donde el caos y
 		<title>{title}</title>
 	</head>
 	<body class="bg-neobase text-neodark min-h-screen">
-		<slot />
+		<ParticlesBackground client:only="react" />
+		<div class="relative z-10">
+			<slot />
+		</div>
 	</body>
 </html>
