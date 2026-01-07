@@ -1,10 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import RulesList from '../components/RulesList.jsx';
-import Footer from '../components/Footer.jsx'; // <--- IMPORTAMOS FOOTER
+import Footer from '../components/Footer.jsx';
 ---
 
 <Layout title="Reglas - Chaothic Golf">
+    
     <div class="min-h-screen bg-neobase font-sans">
         <div class="max-w-6xl mx-auto px-6 py-12">
             <a
@@ -22,9 +23,20 @@ import Footer from '../components/Footer.jsx'; // <--- IMPORTAMOS FOOTER
                     <p class="text-lg leading-relaxed text-gray-800 mb-4">
                         Baraja el mazo de cartas y reparte 3 cartas a cada jugador.
                     </p>
-                    <p class="text-lg leading-relaxed text-gray-800">
+                    <p class="text-lg leading-relaxed text-gray-800 mb-4">
                         Coloca el mazo boca abajo sobre la mesa al alcance de todos los jugadores. Junto a él, boca arriba, se formará la pila de descartes. Cuando el mazo se haya agotado, sencillamente voltea la pila de descartes. No es necesario barajarla de nuevo.
                     </p>
+                    <p class="text-lg leading-relaxed text-gray-800 mb-6">
+                        Colocad tantas cartas de PAR como queráis (recomendación, 4), el hoyo al final formando una columna, y vuestras pelotas en la parte inferior en una línea perpendicular.
+                    </p>
+                    
+                    <div class="mt-6 flex justify-center">
+                        <img 
+                            src="/images/preparacionfoto.png" 
+                            alt="Esquema de preparación del juego" 
+                            class="w-64 h-auto rounded-lg border-2 border-neodark shadow-sm"
+                        />
+                    </div>
                 </div>
             </section>
 
@@ -33,9 +45,17 @@ import Footer from '../components/Footer.jsx'; // <--- IMPORTAMOS FOOTER
                     OBJETIVO DEL JUEGO
                 </h2>
                 <div class="pt-4">
-                    <p class="text-lg leading-relaxed text-gray-800">
+                    <p class="text-lg leading-relaxed text-gray-800 mb-6">
                         Sé el primero en meter tu pelota en el hoyo... o el hoyo en tu pelota.
                     </p>
+
+                    <div class="mt-6 flex justify-center">
+                        <img 
+                            src="/images/objetivofoto.png" 
+                            alt="Objetivo del juego" 
+                            class="w-64 h-auto rounded-lg border-2 border-neodark shadow-sm"
+                        />
+                    </div>
                 </div>
             </section>
 
@@ -81,6 +101,33 @@ import Footer from '../components/Footer.jsx'; // <--- IMPORTAMOS FOOTER
                             <span class="text-neoaccent font-black text-xl">Fase 4:</span> En los turnos de los demás, presta atención por si puedes usar una carta naranja para desbaratar las estrategias de tus oponentes.
                         </li>
                     </ul>
+                </div>
+            </section>
+
+            <section class="bg-white border-2 border-neodark p-8 mb-12 shadow-neo relative">
+                <h2 class="absolute -top-5 left-6 bg-neodark text-white px-4 py-2 text-xl font-black uppercase -rotate-1 border-2 border-white">
+                    SITUACIONES ESPECIALES
+                </h2>
+                <div class="pt-4">
+                    <ul class="list-disc pl-5 space-y-4 text-lg text-gray-800 mb-6">
+                        <li class="pl-2">
+                            <strong>El hoyo</strong> también puede pasar por el portal, al igual que las pelotas, mantiene la dirección y las propias casillas de los hoyos no cuentan al moverse.
+                        </li>
+                        <li class="pl-2">
+                            Si una pelota u hoyo se <strong>cae de la zona de juego</strong> (por ejemplo, de una mesa), vuelve a la posición inicial que tenía al principio de la partida.
+                        </li>
+                        <li class="pl-2">
+                            <strong>Las pelotas colisionan entre sí</strong>, por ejemplo: si PelotaAZUL tiene que avanzar 3 posiciones, pero PelotaROJA está en el camino, PelotaAZUL solo podrá avanzar hasta donde esté PelotaROJA, y esta avanzará las posiciones restantes que PelotaAZUL no haya podido hacer.
+                        </li>
+                    </ul>
+
+                    <div class="mt-6 flex justify-center">
+                        <img 
+                            src="/images/colisionfoto.png" 
+                            alt="Ejemplo de colisión entre pelotas" 
+                            class="w-64 h-auto rounded-lg border-2 border-neodark shadow-sm"
+                        />
+                    </div>
                 </div>
             </section>
 
